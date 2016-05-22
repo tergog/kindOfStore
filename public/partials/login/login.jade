@@ -1,0 +1,18 @@
+.well-sm
+    form.login_form_wrap(ng-submit="log.viewUser()")
+        .form-group-sm
+            label E-mail address
+                span.alert-danger {{log.loginData.emailAlert}}
+            input.form-control(type="email" name="input" placeholder="E-mail" ng-model="log.loginData.email" required)
+        .form-group-sm
+            label Password
+                span.alert-danger {{log.loginData.passAlert}}
+            .input_log_wrap
+                .input_log
+                    input.form-control(type="password" name="input" placeholder="Password" ng-model="log.loginData.pass" required)
+                .input_btn
+                    button.btn.btn-default(type="submit") Log-in
+        .checkbox
+            label
+                input(type="checkbox" ng-model="log.loginData.checked")
+                | Remember me

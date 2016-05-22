@@ -1,0 +1,17 @@
+.container
+    .row
+        .col-md-4.col-md-offset-4
+            .well-lg
+                .well-sm
+                    form.login_form_wrap(ng-submit="post.postTweet()")
+                        .form-group-sm
+                            label Hashtags
+                            input.form-control(type="text" name="hash" ng-model="post.tweetData.tags" required)
+                        .form-group-sm
+                            label Text
+                            .input_log_wrap
+                                .input_log
+                                    textarea.form-control(name="input" placeholder="Text" ng-model="post.tweetData.text" required)
+                                .input_btn
+                                    button.btn.btn-default(type="submit") Post
+

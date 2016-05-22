@@ -1,0 +1,20 @@
+.container
+    .row
+        .well-lg
+            .input-group
+                input.form-control(type="search" ng-model='searchText' placeholder="Search for items")
+                .input-group-addon.order(ng-click="storage.showAllItems()") All Items
+                .input-group-addon.order(ng-click="storage.setItemsPerPage(6)") Items per page: 6
+                .input-group-addon.order(ng-click="storage.order('price')") Price $
+                .input-group-addon.order(ng-click="storage.order('name')") Name
+                .input-group-addon.order(ng-click="storage.order('category')") Category
+        .col-md-4.col-sm-6.repeat-animation(ng-repeat="item in storage.itemsOnPage | filter: searchText | orderBy:storage.predicate")
+            .well.category_item
+                h5 Name: {{item.title}}
+                h6 Category: {{item.category}}
+                img.thumbnail(ng-src="{{item.img_url}}")
+                .btn.btn-primary(uib-popover="{{item.description}}") Description
+                p.currency_style.pull-right {{item.price | currency }}
+    uib-pagination(total-items="storage.totalItems" ng-model="storage.currentPage" ng-change="storage.setPage(storage.currentPage)" items-per-page="storage.itemsPerPage")
+
+

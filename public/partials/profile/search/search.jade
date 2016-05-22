@@ -1,0 +1,17 @@
+.container
+    .row
+        .col-md-4.col-md-offset-4
+            .well-lg
+                .input-group
+                    input.form-control(type="search" ng-model='search.text' placeholder="Search for tweets")
+                    span.input-group-btn
+                        button.btn.btn-default(type="button" ng-click="searchTweets()")
+                            i.glyphicon.glyphicon-search
+                        button.btn.btn-default(type="button" ng-click="streamTweets()")
+                            i.glyphicon.glyphicon-facetime-video
+
+    .row
+        .well-lg(ng-repeat="tweet in search.textResp.statuses")
+            .well-lg.well-lg-custom {{tweet.text}}
+        .well-lg(ng-repeat="tweet in search.textResp")
+            .well-lg.well-lg-custom {{tweet.text}}

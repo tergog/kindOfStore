@@ -1,0 +1,41 @@
+include ../head
+    body(ng-app='Morph' ng-controller="UserProfileCtrl as prof")
+        header
+            .top_nav_bar
+                .container
+                    .row
+                        .col-md-6.col-sm-6.col-xs-6
+                            nav
+                                ul.top_nav_menu
+                                    li
+                                        a(href="#")
+                                            i.fa.fa-fort-awesome.fa-2x
+                                            | Main page
+                                    li
+                                        a(href="#")
+                                            i.fa.fa-coffee.fa-2x
+                                            | About us
+                        .col-md-4.col-md-offset-2.col-sm-6.col-xs-6
+                            .pull-right
+                                .dropdown
+                                    button.btn.btn-default(type="button" ng-click="prof.logout()")
+                                        i.fa.fa-user
+                                        | #{user} Logout
+        .well-lg
+            .container
+                .row
+                    .col-md-12
+                        ul.nav.nav-tabs.nav-justified
+                            li
+                                a(ui-sref="user.add") Profile
+                            li
+                                a(ui-sref="user.search") Messages
+                            li
+                                a(ui-sref="user.storage") Storage
+                        .ui-view-container
+                            div(ui-view)
+        include ../footer
+        include ../script
+
+
+

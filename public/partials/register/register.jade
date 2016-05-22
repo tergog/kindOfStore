@@ -1,0 +1,17 @@
+.well-sm
+    form.login_form_wrap(ng-submit='reg.registerUser()')
+        .form-group-sm
+            label Name
+                span.alert-danger {{reg.alerts.nameAlert}}
+            input.form-control(type="name" name="name" placeholder="Name" ng-model="reg.userData.name" required)
+        .form-group-sm
+            label E-mail
+                span.alert-danger {{reg.alerts.emailAlert}}
+            input.form-control(type="email" name="email" placeholder="E-mail" ng-model="reg.userData.email" required)
+        .form-group-sm
+            label Password
+                span.alert-danger {{reg.alerts.passAlert}}
+            input.form-control(type="password" name="input" placeholder="Password" ng-model="reg.userData.pass" required)
+            label Password again
+            input.form-control(type="password" name="input" placeholder="Password again" ng-model="reg.alerts.pass_2" required)
+        button.btn.btn-default(type="submit") Sign up for Morph
