@@ -1,0 +1,39 @@
+@import "bourbon/bourbon"
+
+$color_1: #02AAB0
+$color_2: #00CDAC
+$color_3: #232526
+$color_4: #414345
+$text_color: #888
+$main_color: #222
+$bg_light: #FAFAFA
+
+body
+  @include background(linear-gradient(to left, $color_1, $color_2))
+
+.top_nav_bar
+  color: $color_2
+  i
+    color: $color_1
+button i
+  color: $color_1
+.top_nav_bar
+  a
+    color: $color_2
+    &:hover
+      color: $color_1
+    &:focus
+      color: $color_1
+
+.category_item
+  color:  $color_1
+
+form
+  color: $color_1
+
+.well-lg-custom
+  background-color: $bg_light
+  color: $color_1
+
+footer
+  @include background(linear-gradient(to left, $color_3, $color_4))
